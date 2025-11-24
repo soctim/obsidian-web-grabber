@@ -1,0 +1,30 @@
+{
+	"name": "obsidian-web-grabber",
+	"version": "1.0.0",
+	"description": "A plugin for grabbing web content and creating Obsidian notes with configurable parsers and templates",
+	"main": "main.js",
+	"scripts": {
+		"dev": "node esbuild.config.mjs",
+		"build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production",
+		"version": "node version-bump.mjs && git add manifest.json versions.json",
+		"test-parsers": "node cli-test-parsers.js"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "MIT",
+	"devDependencies": {
+		"@types/node": "^16.11.6",
+		"@typescript-eslint/eslint-plugin": "5.29.0",
+		"@typescript-eslint/parser": "5.29.0",
+		"builtin-modules": "3.3.0",
+		"esbuild": "0.17.3",
+		"obsidian": "latest",
+		"ts-node": "^10.9.2",
+		"tslib": "2.4.0",
+		"tsx": "^4.20.5",
+		"typescript": "4.7.4"
+	},
+	"dependencies": {
+		"jsdom": "^27.0.0"
+	}
+}

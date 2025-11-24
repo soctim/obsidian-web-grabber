@@ -1,0 +1,403 @@
+/* Web Grabber Plugin Styles */
+
+.web-grabber-ribbon-class {
+	color: var(--text-accent);
+}
+
+.web-grabber-ribbon-class:hover {
+	color: var(--text-accent-hover);
+}
+
+.web-grabber-modal-button-container {
+	display: flex;
+	gap: 10px;
+	justify-content: flex-end;
+	margin-top: 20px;
+}
+
+.web-grabber-setting-item {
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 6px;
+	padding: 15px;
+	margin: 10px 0;
+	background-color: var(--background-secondary);
+}
+
+.web-grabber-setting-item h4 {
+	margin-top: 0;
+	color: var(--text-accent);
+}
+
+.web-grabber-setting-item h5 {
+	margin: 0;
+	color: var(--text-normal);
+}
+
+.web-grabber-setting-item .setting-item-control {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.web-grabber-setting-item .dropdown-container {
+	flex: 1;
+}
+
+.web-grabber-setting-item .refresh-button {
+	margin-left: 0.5rem;
+}
+
+.web-grabber-setting-item .web-grabber-setting-description {
+	color: var(--text-muted);
+	font-size: 0.9em;
+	margin-bottom: 10px;
+}
+
+/* Form styling */
+.web-grabber-modal-content input[type="text"],
+.web-grabber-modal-content select,
+.web-grabber-modal-content textarea {
+	width: 100%;
+	padding: 8px 12px;
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 4px;
+	background-color: var(--background-primary);
+	color: var(--text-normal);
+	font-family: var(--font-text);
+}
+
+.web-grabber-modal-content input[type="text"]:focus,
+.web-grabber-modal-content select:focus,
+.web-grabber-modal-content textarea:focus {
+	outline: none;
+	border-color: var(--interactive-accent);
+	box-shadow: 0 0 0 2px var(--interactive-accent-alpha);
+}
+
+.web-grabber-modal-content label {
+	display: block;
+	margin-bottom: 5px;
+	font-weight: 500;
+	color: var(--text-normal);
+}
+
+.web-grabber-modal-content div {
+	margin-bottom: 15px;
+}
+
+/* Button styling */
+.web-grabber-modal-button-container button {
+	padding: 8px 16px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-weight: 500;
+	transition: all 0.2s ease;
+}
+
+.web-grabber-modal-button-container button.web-grabber-cta {
+	background-color: var(--interactive-accent);
+	color: var(--text-on-accent);
+}
+
+.web-grabber-modal-button-container button.web-grabber-cta:hover {
+	background-color: var(--interactive-accent-hover);
+}
+
+.web-grabber-modal-button-container button:not(.web-grabber-cta) {
+	background-color: var(--background-secondary);
+	color: var(--text-normal);
+	border: 1px solid var(--background-modifier-border);
+}
+
+.web-grabber-modal-button-container button:not(.web-grabber-cta):hover {
+	background-color: var(--background-modifier-hover);
+}
+
+/* Settings tab styling */
+.web-grabber-setting-item .web-grabber-setting-control {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.web-grabber-setting-item .web-grabber-setting-control input,
+.web-grabber-setting-item .web-grabber-setting-control textarea {
+	flex: 1;
+}
+
+.web-grabber-setting-item .web-grabber-setting-control button {
+	margin-left: auto;
+}
+
+/* Template preview */
+.web-grabber-template-preview {
+	background-color: var(--background-primary);
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 4px;
+	padding: 10px;
+	margin-top: 10px;
+	font-family: var(--font-monospace);
+	font-size: 0.9em;
+	white-space: pre-wrap;
+	max-height: 200px;
+	overflow-y: auto;
+}
+
+/* Parser example code */
+.web-grabber-parser-example {
+	background-color: var(--background-primary);
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 4px;
+	padding: 15px;
+	margin: 10px 0;
+	overflow-x: auto;
+}
+
+.web-grabber-parser-example code {
+	font-family: var(--font-monospace);
+	font-size: 0.9em;
+	line-height: 1.4;
+	color: var(--text-normal);
+}
+
+/* Collapsible sections */
+.web-grabber-collapsible-section {
+	margin: 20px 0;
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 6px;
+	background-color: var(--background-secondary);
+}
+
+.web-grabber-collapsible-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 15px 20px;
+	cursor: pointer;
+	user-select: none;
+	transition: background-color 0.2s ease;
+}
+
+.web-grabber-collapsible-header:hover {
+	background-color: var(--background-modifier-hover);
+}
+
+.web-grabber-collapsible-header h3 {
+	margin: 0;
+	color: var(--text-accent);
+}
+
+.web-grabber-collapse-button {
+	background: none;
+	border: none;
+	font-size: 1.2em;
+	color: var(--text-muted);
+	cursor: pointer;
+	padding: 5px;
+	border-radius: 3px;
+	transition: all 0.2s ease;
+}
+
+.web-grabber-collapse-button:hover {
+	color: var(--text-normal);
+	background-color: var(--background-modifier-border);
+}
+
+.web-grabber-collapsible-content {
+	padding: 0 20px 20px 20px;
+	transition: all 0.3s ease;
+	overflow: hidden;
+}
+
+.web-grabber-collapsible-content.collapsed {
+	max-height: 0;
+	padding: 0 20px;
+	opacity: 0;
+}
+
+/* Parser info styling */
+.web-grabber-parser-info {
+	margin-bottom: 10px;
+}
+
+.web-grabber-parser-info h5 {
+	margin: 0 0 5px 0;
+	color: var(--text-accent);
+}
+
+.web-grabber-parser-info p {
+	margin: 2px 0;
+	color: var(--text-muted);
+	font-size: 0.9em;
+}
+
+.web-grabber-parser-controls {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.web-grabber-new-parser {
+	margin-top: 15px;
+	padding: 15px;
+	background-color: var(--background-primary);
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 4px;
+}
+
+/* Parser fields display */
+.web-grabber-parser-fields {
+	margin: 15px 0;
+	padding: 15px;
+	background-color: var(--background-primary);
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 4px;
+}
+
+.web-grabber-parser-fields h5 {
+	margin: 0 0 10px 0;
+	color: var(--text-accent);
+	font-size: 1.1em;
+}
+
+.web-grabber-fields-list {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 8px;
+	margin-top: 10px;
+}
+
+.web-grabber-field-item {
+	padding: 8px 12px;
+	background-color: var(--background-secondary);
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 4px;
+	font-size: 0.9em;
+	line-height: 1.4;
+}
+
+.web-grabber-field-item code {
+	background-color: var(--background-primary);
+	padding: 2px 6px;
+	border-radius: 3px;
+	font-family: var(--font-monospace);
+	font-size: 0.85em;
+}
+
+.web-grabber-field-example {
+	margin-top: 4px;
+	padding-left: 8px;
+	border-left: 2px solid var(--background-modifier-border);
+}
+
+/* Field chips styling */
+.web-grabber-fields-chips {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+	margin-top: 8px;
+}
+
+.web-grabber-field-chip {
+	display: inline-block;
+	padding: 4px 8px;
+	background-color: var(--interactive-accent);
+	color: var(--text-on-accent);
+	font-family: var(--font-monospace);
+	font-size: 0.8em;
+	border-radius: 12px;
+	cursor: help;
+	transition: all 0.2s ease;
+	white-space: nowrap;
+}
+
+.web-grabber-field-chip:hover {
+	background-color: var(--interactive-accent-hover);
+	transform: translateY(-1px);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Autocomplete styling */
+.web-grabber-autocomplete-container {
+	position: relative;
+	width: 100%;
+}
+
+.web-grabber-autocomplete-input {
+	width: 100%;
+	padding: 8px 12px;
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 4px;
+	background-color: var(--background-primary);
+	color: var(--text-normal);
+	font-family: var(--font-text);
+	font-size: 14px;
+	transition: all 0.2s ease;
+}
+
+.web-grabber-autocomplete-input:focus {
+	outline: none;
+	border-color: var(--interactive-accent);
+	box-shadow: 0 0 0 2px var(--interactive-accent-alpha);
+}
+
+.web-grabber-autocomplete-dropdown {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	right: 0;
+	background-color: var(--background-primary);
+	border: 1px solid var(--background-modifier-border);
+	border-top: none;
+	border-radius: 0 0 4px 4px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	z-index: 1000;
+	max-height: 200px;
+	overflow-y: auto;
+}
+
+.web-grabber-autocomplete-suggestion {
+	padding: 8px 12px;
+	cursor: pointer;
+	font-size: 14px;
+	color: var(--text-normal);
+	border-bottom: 1px solid var(--background-modifier-border);
+	transition: background-color 0.2s ease;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.web-grabber-autocomplete-suggestion:last-child {
+	border-bottom: none;
+}
+
+.web-grabber-autocomplete-suggestion:hover,
+.web-grabber-autocomplete-suggestion.selected {
+	background-color: var(--background-modifier-hover);
+	color: var(--text-accent);
+}
+
+.web-grabber-autocomplete-suggestion.selected {
+	background-color: var(--interactive-accent);
+	color: var(--text-on-accent);
+}
+
+/* Responsive design for fields */
+@media (max-width: 768px) {
+	.web-grabber-fields-list {
+		grid-template-columns: 1fr;
+	}
+	
+	.web-grabber-fields-chips {
+		gap: 4px;
+	}
+	
+	.web-grabber-field-chip {
+		font-size: 0.75em;
+		padding: 3px 6px;
+	}
+}
+
