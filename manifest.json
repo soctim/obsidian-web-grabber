@@ -1,7 +1,7 @@
 {
 	"id": "web-grabber",
 	"name": "Web Grabber",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"minAppVersion": "0.15.0",
 	"description": "Grab web content and create Obsidian notes with configurable parsers and templates",
 	"author": "Web Grabber Plugin",

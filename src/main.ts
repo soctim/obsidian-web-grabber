@@ -5,6 +5,7 @@ import { WebGrabberModal } from './modal';
 import { WebScraperService } from './services/web-scraper';
 import { ParserService } from './services/parser-service';
 import { TemplateService } from './services/template-service';
+import { TagsListView, TAGS_LIST_VIEW_TYPE } from './views/tags-list-view';
 
 const DEFAULT_SETTINGS: WebGrabberSettings = {
 	templates: [],
@@ -37,12 +38,26 @@ export default class WebGrabberPlugin extends Plugin {
 			this.showModal();
 		});
 
-		// Add command
+		// Register view
+		this.registerView(
+			TAGS_LIST_VIEW_TYPE,
+			(leaf) => new TagsListView(leaf, this.parserService)
+		);
+
+		// Add commands
 		this.addCommand({
 			id: 'web-grabber-open',
 			name: 'Open Web Grabber',
 			callback: () => {
 				this.showModal();
+			}
+		});
+
+		this.addCommand({
+			id: 'web-grabber-open-tags-list',
+			name: 'Open tags list',
+			callback: () => {
+				this.openTagsListView();
 			}
 		});
 
@@ -67,6 +82,37 @@ export default class WebGrabberPlugin extends Plugin {
 		new WebGrabberModal(this.app, this.settings, this.parserService.getParsers(), (url, parserId, templateId) => {
 			this.webScraperService.createNoteFromUrl(url, parserId, templateId);
 		}).open();
+	}
+
+	private async openTagsListView() {
+		const { workspace } = this.app;
+
+		// Check if view already exists
+		let leaf = workspace.getLeavesOfType(TAGS_LIST_VIEW_TYPE)[0];
+
+		if (!leaf) {
+			// Create new leaf on the right side
+			const rightLeaf = workspace.getRightLeaf(false);
+			if (rightLeaf) {
+				await rightLeaf.setViewState({
+					type: TAGS_LIST_VIEW_TYPE,
+					active: true,
+				});
+				leaf = rightLeaf;
+			} else {
+				// Fallback: create a new leaf
+				leaf = workspace.getLeaf(true);
+				await leaf.setViewState({
+					type: TAGS_LIST_VIEW_TYPE,
+					active: true,
+				});
+			}
+		}
+
+		// Reveal the leaf
+		if (leaf) {
+			workspace.revealLeaf(leaf);
+		}
 	}
 
 	// Public methods for services to use

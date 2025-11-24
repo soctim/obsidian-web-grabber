@@ -319,6 +319,41 @@
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Clickable field chips */
+.web-grabber-field-chip-clickable {
+	cursor: pointer;
+	user-select: none;
+}
+
+.web-grabber-field-chip-clickable:hover {
+	background-color: var(--interactive-accent-hover);
+	transform: translateY(-1px);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.web-grabber-field-chip-clickable:active {
+	transform: translateY(0);
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.web-grabber-field-chip-copied {
+	background-color: #4caf50 !important;
+	animation: web-grabber-chip-pulse 0.5s ease;
+}
+
+.theme-dark .web-grabber-field-chip-copied {
+	background-color: #66bb6a !important;
+}
+
+@keyframes web-grabber-chip-pulse {
+	0%, 100% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.1);
+	}
+}
+
 /* Autocomplete styling */
 .web-grabber-autocomplete-container {
 	position: relative;
@@ -385,6 +420,76 @@
 	color: var(--text-on-accent);
 }
 
+/* Tags List View styling */
+.web-grabber-tags-list-container {
+	padding: 20px;
+	max-width: 100%;
+	overflow-y: auto;
+	height: 100%;
+}
+
+.web-grabber-tags-list-header {
+	margin-bottom: 30px;
+	padding-bottom: 15px;
+	border-bottom: 2px solid var(--background-modifier-border);
+}
+
+.web-grabber-tags-list-header h2 {
+	margin: 0 0 10px 0;
+	color: var(--text-accent);
+}
+
+.web-grabber-tags-list-description {
+	margin: 0;
+	color: var(--text-muted);
+	font-size: 0.9em;
+}
+
+.web-grabber-tags-list-empty {
+	padding: 40px 20px;
+	text-align: center;
+	color: var(--text-muted);
+	font-style: italic;
+}
+
+.web-grabber-tags-list-parser {
+	margin-bottom: 30px;
+	padding: 20px;
+	background-color: var(--background-secondary);
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 8px;
+}
+
+.web-grabber-tags-list-parser-header {
+	margin-bottom: 15px;
+}
+
+.web-grabber-tags-list-parser-header h3 {
+	margin: 0 0 5px 0;
+	color: var(--text-accent);
+}
+
+.web-grabber-tags-list-parser-id {
+	margin: 0;
+	color: var(--text-muted);
+	font-size: 0.85em;
+	font-family: var(--font-monospace);
+}
+
+.web-grabber-tags-list-fields-label {
+	margin: 15px 0 10px 0;
+	font-weight: 500;
+	color: var(--text-accent);
+	font-size: 0.95em;
+}
+
+.web-grabber-tags-list-no-fields {
+	margin: 10px 0;
+	color: var(--text-muted);
+	font-style: italic;
+	font-size: 0.9em;
+}
+
 /* Responsive design for fields */
 @media (max-width: 768px) {
 	.web-grabber-fields-list {
@@ -398,6 +503,14 @@
 	.web-grabber-field-chip {
 		font-size: 0.75em;
 		padding: 3px 6px;
+	}
+
+	.web-grabber-tags-list-container {
+		padding: 15px;
+	}
+
+	.web-grabber-tags-list-parser {
+		padding: 15px;
 	}
 }
 
